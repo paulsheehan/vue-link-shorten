@@ -1,0 +1,21 @@
+.url-input-container {
+  width: 1110px;
+  height: 168px;
+  margin: 0 auto;
+  background-image: url("../../assets/url-input-background.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.url-input-container input {
+  height: 68px;
+  border-radius: 10px;
+  width: 769px;
+  border-style: none;
+}
+
+.url-input-container .btn-link {
+  margin-left: 24px;
+  border-radius: 10px;
+}

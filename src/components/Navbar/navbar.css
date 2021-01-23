@@ -1,0 +1,40 @@
+header {
+  margin-top: 58px;
+}
+
+.header-container {
+  display: flex;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.nav-list .btn-link {
+  font-size: 15px;
+  margin-left: 23px;
+  padding: 0 7px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  color: var(--secondary-text-color);
+}
+
+.nav-list .nav-home a {
+  padding: 0;
+  margin-right: 37px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: inherit;
+  padding: 8.5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list-primary {
+  margin-right: auto;
+}

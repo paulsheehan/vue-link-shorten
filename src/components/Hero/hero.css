@@ -1,0 +1,15 @@
+.hero-container {
+  margin: 78px 0 68px 0;
+  margin-top: 78px;
+  margin-bottom: 68px;
+}
+
+.hero-info {
+  max-width: 565px;
+}
+
+.hero-container p {
+  margin-bottom: 38px;
+}
+
+

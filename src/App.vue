@@ -1,28 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Navbar />
+    <Hero />
+    <UrlInput />
+    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import Navbar from "./components/Navbar/Navbar.vue";
+import Hero from "./components/Hero/Hero.vue";
+import UrlInput from "./components/UrlInput/UrlInput.vue";
+// import Info from "./components/Info/Info.vue";
+// import CtaSecondaryBanner from "./components/cta-secondary-banner/CtaSecondaryBanner.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+    Navbar,
+    Hero,
+    UrlInput,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url("./app.css");
 </style>
