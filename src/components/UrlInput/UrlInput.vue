@@ -1,6 +1,6 @@
 <template>
   <div class="url-input-container">
-    <input type="text" />
+    <input type="text" placeholder="Shorten a link here..." />
     <a class="btn-link">Shorten It!</a>
   </div>
 </template>

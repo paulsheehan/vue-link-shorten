@@ -9,13 +9,22 @@
 }
 
 .url-input-container input {
-  height: 68px;
   border-radius: 10px;
   width: 769px;
   border-style: none;
+  padding: 20.5px 0 20.5px 32px;
+  font-size: 20px;
+  color: var(--secondary-text-color);
+}
+
+.url-input-container input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: inherit;
+  opacity: 1; /* Firefox */
 }
 
 .url-input-container .btn-link {
   margin-left: 24px;
   border-radius: 10px;
+  padding: 17px 40px;
 }

@@ -3,6 +3,7 @@
     <Navbar />
     <Hero />
     <UrlInput />
+    <Info />
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
@@ -12,7 +13,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Navbar from "./components/Navbar/Navbar.vue";
 import Hero from "./components/Hero/Hero.vue";
 import UrlInput from "./components/UrlInput/UrlInput.vue";
-// import Info from "./components/Info/Info.vue";
+import Info from "./components/Info/Info.vue";
 // import CtaSecondaryBanner from "./components/cta-secondary-banner/CtaSecondaryBanner.vue";
 
 export default {
@@ -22,6 +23,7 @@ export default {
     Navbar,
     Hero,
     UrlInput,
+    Info,
   },
 };
 </script>
