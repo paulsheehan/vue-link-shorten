@@ -61,3 +61,8 @@ p {
   padding: 13px 40px;
   color: var(--white);
 }
+
+.btn-link:hover {
+  cursor: pointer;
+  filter: brightness(95%);
+}

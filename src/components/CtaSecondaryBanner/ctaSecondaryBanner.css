@@ -1,0 +1,11 @@
+section.secondary-banner {
+  padding: 57px 0;
+  background-image: url("../../assets/secondary-banner-background.svg");
+  text-align: center;
+}
+
+.secondary-banner h2 {
+  color: var(--white);
+  margin-bottom: 32px;
+  line-height: 48px;
+}

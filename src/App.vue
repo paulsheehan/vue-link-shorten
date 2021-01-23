@@ -4,6 +4,7 @@
     <Hero />
     <UrlInput />
     <Info />
+    <CtaSecondaryBanner />
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
@@ -14,7 +15,7 @@ import Navbar from "./components/Navbar/Navbar.vue";
 import Hero from "./components/Hero/Hero.vue";
 import UrlInput from "./components/UrlInput/UrlInput.vue";
 import Info from "./components/Info/Info.vue";
-// import CtaSecondaryBanner from "./components/cta-secondary-banner/CtaSecondaryBanner.vue";
+import CtaSecondaryBanner from "./components/CtaSecondaryBanner/CtaSecondaryBanner.vue";
 
 export default {
   name: "App",
@@ -24,6 +25,7 @@ export default {
     Hero,
     UrlInput,
     Info,
+    CtaSecondaryBanner,
   },
 };
 </script>
