@@ -1,7 +1,6 @@
 .hero-container {
-  margin: 78px 0 68px 0;
-  margin-top: 78px;
-  margin-bottom: 68px;
+  overflow: hidden;
+  padding: 139px 0 200px 0;
 }
 
 .hero-info {
@@ -12,4 +11,16 @@
   margin-bottom: 38px;
 }
 
+.hero-row {
+  display: flex;
+}
 
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  position: absolute;
+  top: -60px;
+  left: 80px;
+}

@@ -1,4 +1,13 @@
 .url-input-container {
+  position: relative;
+  height: 55px;
+}
+
+.url-input {
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translate(-50%);
   width: 1110px;
   height: 168px;
   margin: 0 auto;
@@ -8,7 +17,7 @@
   align-items: center;
 }
 
-.url-input-container input {
+.url-input input {
   border-radius: 10px;
   width: 769px;
   border-style: none;
@@ -17,13 +26,13 @@
   color: var(--secondary-text-color);
 }
 
-.url-input-container input::placeholder {
+.url-input input::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: inherit;
   opacity: 1; /* Firefox */
 }
 
-.url-input-container .btn-link {
+.url-input .btn-link {
   margin-left: 24px;
   border-radius: 10px;
   padding: 17px 40px;
