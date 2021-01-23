@@ -1,7 +1,7 @@
 <template>
   <section class="secondary-banner">
     <h2>Boost your links today</h2>
-    <a class="btn-link">Get Started</a>
+    <a href="#" class="btn-link">Get Started</a>
   </section>
 </template>
 

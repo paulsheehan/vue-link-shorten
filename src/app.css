@@ -18,6 +18,8 @@
   --secondary-text-color: #9e9aa8;
   --cta-primary: #2bd0d0;
   --cta-secondary: #3a3054;
+  --footer-bg-color: #232127;
+  --footer-link-color: #bfbfbf;
   --white: #ffffff;
 
   font-family: Poppins, Helvetica, Arial, sans-serif;
@@ -25,6 +27,14 @@
   -moz-osx-font-smoothing: grayscale;
 
   color: var(--primary-text-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 section.bg-col {
@@ -53,6 +63,7 @@ p {
 }
 
 .btn-link {
+  text-decoration: none;
   display: inline-block;
   background-color: var(--cta-primary);
   font-size: 20px;
