@@ -1,3 +1,9 @@
+.results-test {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+}
+
 .url-input-container {
   position: relative;
   height: 55px;
@@ -5,7 +11,8 @@
 
 .url-input {
   position: absolute;
-  top: -55px;
+  top: 100px;
+  /* top: -55px; */
   left: 50%;
   transform: translate(-50%);
   width: 1110px;
@@ -35,5 +42,5 @@
 .url-input .btn-link {
   margin-left: 24px;
   border-radius: 10px;
-  padding: 17px 40px;
+  padding: 20.5px 40px;
 }

@@ -2,7 +2,7 @@
   <div id="app">
     <Navbar />
     <Hero />
-    <UrlInput />
+    <UrlInput @shorten-url="shortenUrl" :shortened-url="shortenedUrl" />
     <Info />
     <CtaSecondaryBanner />
     <Footer />
@@ -29,6 +29,17 @@ export default {
     Info,
     CtaSecondaryBanner,
     Footer,
+  },
+  data() {
+    return {
+      shortenedUrl: "String as prop",
+    };
+  },
+  methods: {
+    shortenUrl(value) {
+      this.shortenedUrl = "(shortened)" + value;
+      console.log(`Sending ${value}`);
+    },
   },
 };
 </script>
