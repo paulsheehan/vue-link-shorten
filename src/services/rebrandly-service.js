@@ -12,20 +12,18 @@ export function getApiAccount() {
     });
 }
 
-export function postApiLink() {
+export function postApiLink(destination) {
   let url = baseUrl + "/links";
-  let test_body = {
-    title: "20somethingdublin",
-    destination: "https://www.20somethingdublin.com/",
-  };
-  console.log("Request body:", test_body);
+  let test_body = JSON.stringify({
+    destination: destination,
+  });
   fetch(url, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
     headers: {
       "X-Requested-With": "XMLHttpRequest",
       Accept: "*/*",
-      "Cache-Control": "no-cache",
+      "Content-Type": "application/json",
     },
     body: test_body,
   })

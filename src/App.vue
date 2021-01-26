@@ -39,7 +39,7 @@ export default {
     shortenUrl(value) {
       this.shortenedUrl = "(shortened)" + value;
       console.log(`Sending ${value}`);
-      console.log(postApiLink());
+      console.log(postApiLink(value));
     },
   },
 };
