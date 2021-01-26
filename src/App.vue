@@ -18,7 +18,7 @@ import UrlInput from "./components/UrlInput/UrlInput.vue";
 import Info from "./components/Info/Info.vue";
 import CtaSecondaryBanner from "./components/CtaSecondaryBanner/CtaSecondaryBanner.vue";
 import Footer from "./components/Footer/Footer.vue";
-
+import { postApiLink } from "./services/rebrandly-service";
 export default {
   name: "App",
   components: {
@@ -39,6 +39,7 @@ export default {
     shortenUrl(value) {
       this.shortenedUrl = "(shortened)" + value;
       console.log(`Sending ${value}`);
+      console.log(postApiLink());
     },
   },
 };
