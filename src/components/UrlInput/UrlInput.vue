@@ -1,11 +1,15 @@
 <template>
-  <section class="bg-col url-input-section">
+  <section
+    class="bg-col url-input-section"
+    :class="'results-' + results.length"
+  >
     <div class="url-input-container">
       <div class="url-input">
         <input
           v-model="inputValue"
           type="text"
           placeholder="Shorten a link here..."
+          v-on:keyup.enter="handleInputSend"
         />
         <button @click="handleInputSend" class="btn-link">Shorten It!</button>
       </div>
@@ -20,11 +24,12 @@
             class="results-shortened-url"
             target="_blank"
             :href="'//' + result.data.shortUrl"
-            >{{ result.shortUrl }}</a
+            >{{ result.data.shortUrl }}</a
           >
           <button
-            @click="result.copied = true"
+            @click="handleLinkCopied(result)"
             class="btn-link"
+            :class="result.copied ? 'activated' : null"
             v-clipboard="result.data.shortUrl"
           >
             {{ result.copied ? "Copied!" : "Copy" }}
@@ -53,9 +58,15 @@ export default {
       if (this.validateInput(this.inputValue)) {
         this.isValid = true;
         this.$emit("shorten-url", this.inputValue);
+        this.inputValue = "";
+        this.isValid = false;
       } else {
         this.isValid = false;
       }
+    },
+    handleLinkCopied(result) {
+      result.copied = true;
+      setTimeout(() => (result.copied = false), 2000);
     },
   },
   props: {

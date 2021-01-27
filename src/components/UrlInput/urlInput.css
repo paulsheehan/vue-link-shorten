@@ -1,8 +1,17 @@
 .url-input-section {
   position: relative;
-  /* height: 233px; */
+  height: 233px;
   /* +248px when full */
-  height: 368px;
+}
+
+.url-input-section.results-1 {
+  height: 324px;
+}
+.url-input-section.results-2 {
+  height: 415px;
+}
+.url-input-section.results-3 {
+  height: 506px;
 }
 
 .url-input-container {
@@ -50,6 +59,10 @@
   padding: 10px 7px;
   font-size: 15px;
   width: 103px;
+}
+
+.results-list .btn-link.activated {
+  background-color: var(--cta-secondary);
 }
 
 .results-list a {

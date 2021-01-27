@@ -10,12 +10,10 @@
     <Info />
     <CtaSecondaryBanner />
     <Footer />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import Navbar from "./components/Navbar/Navbar.vue";
 import Hero from "./components/Hero/Hero.vue";
 import UrlInput from "./components/UrlInput/UrlInput.vue";
@@ -26,7 +24,6 @@ import { postApiLink } from "./services/rebrandly-service";
 export default {
   name: "App",
   components: {
-    HelloWorld,
     Navbar,
     Hero,
     UrlInput,
@@ -38,14 +35,14 @@ export default {
     return {
       shortenedUrl: "String as prop",
       results: [
-        {
-          data: {
-            createdAt: "2021-01-26T22:45:54.000Z",
-            shortUrl: "rebrand.ly/6lhn0x1",
-            destination: "www.google.com",
-          },
-          copied: false,
-        },
+        // {
+        //   data: {
+        //     createdAt: "2021-01-26T22:45:54.000Z",
+        //     shortUrl: "rebrand.ly/6lhn0x1",
+        //     destination: "www.google.com",
+        //   },
+        //   copied: false,
+        // },
       ],
     };
   },
@@ -58,7 +55,12 @@ export default {
       console.log(shortenedUrl);
 
       if (shortenedUrl) {
-        this.results.push(shortenedUrl);
+        if (this.results.length > 2) {
+          this.results.pop();
+          this.results.unshift(shortenedUrl);
+        } else {
+          this.results.unshift(shortenedUrl);
+        }
       } else {
         console.log(
           "Something went wrong, and could not return a shortened link"
