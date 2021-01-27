@@ -75,9 +75,15 @@ button {
   border-radius: 28px;
   padding: 13px 40px;
   color: var(--white);
+  transition: background-color 0s;
 }
 
 .btn-link:hover {
   cursor: pointer;
-  filter: brightness(95%);
+  background-color: #9ae3e3;
+  transition: background-color 0.1s;
+}
+
+a:hover {
+  cursor: pointer;
 }

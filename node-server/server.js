@@ -125,6 +125,7 @@ app.post("/links", (req, res) => {
   //   destination: "https://www.20somethingdublin.com/",
   // });
   const link = {
+    createdAt: "2021-01-26T22:45:54.000Z",
     shortUrl: "rebrand.ly/6lhn0x1",
     destination: req.body.destination,
   };

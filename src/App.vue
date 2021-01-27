@@ -2,7 +2,11 @@
   <div id="app">
     <Navbar />
     <Hero />
-    <UrlInput @shorten-url="shortenUrl" :shortened-url="shortenedUrl" />
+    <UrlInput
+      @shorten-url="shortenUrl"
+      :shortened-url="shortenedUrl"
+      :results="results"
+    />
     <Info />
     <CtaSecondaryBanner />
     <Footer />
@@ -33,13 +37,33 @@ export default {
   data() {
     return {
       shortenedUrl: "String as prop",
+      results: [
+        {
+          data: {
+            createdAt: "2021-01-26T22:45:54.000Z",
+            shortUrl: "rebrand.ly/6lhn0x1",
+            destination: "www.google.com",
+          },
+          copied: false,
+        },
+      ],
     };
   },
   methods: {
-    shortenUrl(value) {
-      this.shortenedUrl = "(shortened)" + value;
-      console.log(`Sending ${value}`);
-      console.log(postApiLink(value));
+    async shortenUrl(value) {
+      let shortenedUrl = {
+        data: await postApiLink(value),
+        copied: false,
+      };
+      console.log(shortenedUrl);
+
+      if (shortenedUrl) {
+        this.results.push(shortenedUrl);
+      } else {
+        console.log(
+          "Something went wrong, and could not return a shortened link"
+        );
+      }
     },
   },
 };

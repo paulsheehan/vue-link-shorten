@@ -17,7 +17,7 @@ export function postApiLink(destination) {
   let test_body = JSON.stringify({
     destination: destination,
   });
-  fetch(url, {
+  return fetch(url, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
     headers: {
@@ -27,12 +27,14 @@ export function postApiLink(destination) {
     },
     body: test_body,
   })
+    .catch((err) => {
+      console.log(err);
+    })
     .then((response) => {
       // Can make changes based on the response type at this point
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       return data;
     });
 }
