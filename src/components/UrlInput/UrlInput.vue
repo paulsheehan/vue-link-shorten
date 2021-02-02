@@ -9,9 +9,17 @@
           v-model="inputValue"
           type="text"
           placeholder="Shorten a link here..."
-          v-on:keyup.enter="handleInputSend"
+          v-on:keyup="onKeyup"
+          v-on:focus="showDisplayMessage ? toggleDisplayMessage() : null"
+          :class="showDisplayMessage ? 'invalid' : 'null'"
         />
         <button @click="handleInputSend" class="btn-link">Shorten It!</button>
+        <span
+          :class="showDisplayMessage ? 'show' : null"
+          class="display-message"
+        >
+          {{ displayMessage }}
+        </span>
       </div>
       <ul class="results-list">
         <li
@@ -46,6 +54,8 @@ export default {
     return {
       isValid: false,
       inputValue: "",
+      showDisplayMessage: false,
+      displayMessage: "",
     };
   },
   methods: {
@@ -53,6 +63,17 @@ export default {
       // Add code to check if input is a Url
       let re = /[-a-zA-Z0-9@:%._~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_.~#?&//=]*)/;
       return re.test(value);
+    },
+    toggleDisplayMessage() {
+      this.showDisplayMessage = !this.showDisplayMessage;
+    },
+    onKeyup(event) {
+      console.log("Event");
+      if (event.key === "Enter") {
+        this.handleInputSend();
+      } else {
+        setTimeout(() => (this.showDisplayMessage = false), 100);
+      }
     },
     handleInputSend() {
       if (this.validateInput(this.inputValue)) {
@@ -62,6 +83,12 @@ export default {
         this.isValid = false;
       } else {
         this.isValid = false;
+        this.showDisplayMessage = true;
+        if (this.inputValue) {
+          this.displayMessage = "Please add a valid link";
+        } else {
+          this.displayMessage = "Please add a link";
+        }
       }
     },
     handleLinkCopied(result) {

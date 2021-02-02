@@ -41,6 +41,24 @@
   color: var(--secondary-text-color);
 }
 
+.url-input input.invalid {
+  border: solid 3px var(--error-text-color);
+  padding: 17.5px 0 17.5px 32px;
+}
+
+.display-message {
+  display: none;
+  position: absolute;
+  top: 124px;
+  left: 64px;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--error-text-color);
+}
+.display-message.show {
+  display: inline-block;
+}
+
 .url-input input::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: inherit;
