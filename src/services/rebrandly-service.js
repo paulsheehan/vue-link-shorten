@@ -32,9 +32,10 @@ export function postApiLink(destination) {
     })
     .then((response) => {
       // Can make changes based on the response type at this point
-      return response.json();
-    })
-    .then((data) => {
-      return data;
+      if (response) {
+        return response.json();
+      } else {
+        return "";
+      }
     });
 }

@@ -55,9 +55,9 @@ export default {
         data: await postApiLink(value),
         copied: false,
       };
-      this.isLoading = false;
 
-      if (shortenedUrl) {
+      this.isLoading = false;
+      if (shortenedUrl.data) {
         if (this.results.length > 2) {
           this.results.pop();
           this.results.unshift(shortenedUrl);
