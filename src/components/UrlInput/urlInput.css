@@ -101,6 +101,21 @@
   border-radius: 5px;
   background-color: var(--white);
 }
+.results-item.loading {
+  height: 71px;
+  animation: loadingGradient 3s infinite linear;
+  background: linear-gradient(to right, #9ae3e3 60%, #fff 60%);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+}
+@keyframes loadingGradient {
+  to {
+    /* background: linear-gradient(to left, #9ae3e3 100%, #ffffff); */
+    background-position: 0% 0;
+    /* background: linear-gradient(to left, #9ae3e3 100%, #fff); */
+  }
+}
+
 .results-destination {
   margin-right: auto;
   padding-right: 10px;

@@ -22,6 +22,7 @@
         </span>
       </div>
       <ul class="results-list">
+        <li v-if="isLoading" class="results-item loading"></li>
         <li
           class="results-item"
           v-for="result in results"
@@ -68,7 +69,6 @@ export default {
       this.showDisplayMessage = !this.showDisplayMessage;
     },
     onKeyup(event) {
-      console.log("Event");
       if (event.key === "Enter") {
         this.handleInputSend();
       } else {
@@ -104,6 +104,9 @@ export default {
     results: {
       type: Array,
       default: () => [],
+    },
+    isLoading: {
+      type: Boolean,
     },
   },
   emits: ["shorten-url"],

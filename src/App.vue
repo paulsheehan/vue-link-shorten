@@ -4,6 +4,7 @@
     <Hero />
     <UrlInput
       @shorten-url="shortenUrl"
+      :is-loading="isLoading"
       :shortened-url="shortenedUrl"
       :results="results"
     />
@@ -33,7 +34,8 @@ export default {
   },
   data() {
     return {
-      shortenedUrl: "String as prop",
+      shortenedUrl: "",
+      isLoading: false,
       results: [
         // {
         //   data: {
@@ -48,11 +50,12 @@ export default {
   },
   methods: {
     async shortenUrl(value) {
+      this.isLoading = true;
       let shortenedUrl = {
         data: await postApiLink(value),
         copied: false,
       };
-      console.log(shortenedUrl);
+      this.isLoading = false;
 
       if (shortenedUrl) {
         if (this.results.length > 2) {

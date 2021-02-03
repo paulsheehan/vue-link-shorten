@@ -129,7 +129,10 @@ app.post("/links", (req, res) => {
     shortUrl: "rebrand.ly/6lhn0x1",
     destination: req.body.destination,
   };
-  res.status(200).json(link);
+
+  setTimeout(function() {
+    res.status(200).json(link);
+  }, 3000);
 });
 
 // Get Rebrandly account data
