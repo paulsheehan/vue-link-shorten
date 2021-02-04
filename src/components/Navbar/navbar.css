@@ -51,15 +51,50 @@ header {
 
 .mobile-nav {
   display: none;
-  position: absolute;
-  top: 73px;
-  /* display: flex; */
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  top: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: var(--cta-secondary);
+  z-index: 1000;
+  width: 327px;
+  font-weight: 700;
+  padding: 25px 24px;
+  border-radius: 10px;
 }
 
 .mobile-nav li {
+  width: 100%;
+  text-align: center;
+}
+.nav-menu-br {
+  display: block;
+  background-color: #9e9aa8;
+  width: 100%;
+  height: 1px;
+  opacity: 0.3;
   margin: 15px 0;
+}
+
+.mobile-nav .btn-link {
+  width: 100%;
+  padding: 12px 40px 9px 40px;
+  margin: 9px 0 15px 0;
+  font-size: 18px;
+}
+.mobile-nav a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 15px 0;
+  color: var(--white);
+}
+
+.mobile-nav.open {
+  display: flex;
 }
 
 @media only screen and (max-width: 1110px) {

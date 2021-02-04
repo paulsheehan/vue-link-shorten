@@ -50,6 +50,9 @@
 }
 
 @media only screen and (max-width: 1110px) {
+  .info-container {
+    padding-bottom: 32px;
+  }
   .info-cards-container {
     flex-direction: column;
     align-items: center;
@@ -57,6 +60,7 @@
   .info-card {
     align-items: center;
     max-width: 327px;
+    margin-bottom: 48pxx;
   }
   .info-card p {
     text-align: center;
@@ -64,5 +68,13 @@
   .info-card img {
     right: 50%;
     transform: translate(50%);
+  }
+}
+
+@media only screen and (max-width: 327px) {
+  .info-card {
+    align-items: center;
+    max-width: 95%;
+    padding: 77px 20px 41px 20px;
   }
 }

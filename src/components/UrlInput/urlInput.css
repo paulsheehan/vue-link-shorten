@@ -148,6 +148,7 @@
     padding: 24px;
     height: 160px;
     background-image: url("../../assets/url-input-mobile-background-small.svg");
+    background-repeat: no-repeat;
   }
   .url-input.invalid {
     height: 182px;
@@ -180,5 +181,17 @@
   }
   .url-input .btn-link {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 327px) {
+  .url-input-container {
+    width: 100%;
+  }
+  .url-input {
+    background-size: 100% 160px;
+  }
+  .url-input.invalid {
+    background-size: 100% 182px;
   }
 }

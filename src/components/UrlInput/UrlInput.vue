@@ -1,7 +1,7 @@
 <template>
   <section
     class="bg-col url-input-section"
-    :class="'results-' + results.length"
+    :class="[isLoading ? 'results-1' : '', 'results-' + results.length]"
   >
     <div class="url-input-container">
       <div class="url-input" :class="showDisplayMessage ? 'invalid' : null">

@@ -9,3 +9,14 @@ section.secondary-banner {
   margin-bottom: 32px;
   line-height: 48px;
 }
+
+@media only screen and (max-width: 375px) {
+  section.secondary-banner {
+    padding: 90px 0;
+    background-image: url("../../assets/secondary-banner-mobile-background.svg");
+    text-align: center;
+  }
+  .secondary-banner h2 {
+    margin-bottom: 16px;
+  }
+}
