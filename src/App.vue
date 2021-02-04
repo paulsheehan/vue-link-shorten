@@ -37,14 +37,14 @@ export default {
       shortenedUrl: "",
       isLoading: false,
       results: [
-        // {
-        //   data: {
-        //     createdAt: "2021-01-26T22:45:54.000Z",
-        //     shortUrl: "rebrand.ly/6lhn0x1",
-        //     destination: "www.google.com",
-        //   },
-        //   copied: false,
-        // },
+        {
+          data: {
+            createdAt: "2021-01-26T22:45:54.000Z",
+            shortUrl: "rebrand.ly/6lhn0x1",
+            destination: "www.google.com",
+          },
+          copied: false,
+        },
       ],
     };
   },

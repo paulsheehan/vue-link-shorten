@@ -62,7 +62,7 @@ export default {
   methods: {
     validateInput(value) {
       // Add code to check if input is a Url
-      let re = /[-a-zA-Z0-9@:%._~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_.~#?&//=]*)/;
+      let re = /[-a-zA-Z0-9@:%._~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b\s([-a-zA-Z0-9()@:%_.~#?&//=]*)/;
       return re.test(value);
     },
     toggleDisplayMessage() {
