@@ -114,3 +114,10 @@ header {
     max-width: 327px;
   }
 }
+
+@media only screen and (max-width: 327px) {
+  .content-container.header-container,
+  .mobile-nav {
+    width: 90%;
+  }
+}
