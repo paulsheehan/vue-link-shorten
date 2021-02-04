@@ -3,9 +3,14 @@ header {
 }
 
 .header-container {
+  position: relative;
   display: flex;
   font-weight: bold;
   font-size: 15px;
+}
+
+.header-container .mobile {
+  display: none;
 }
 
 .nav-list .btn-link {
@@ -37,4 +42,40 @@ header {
 
 .nav-list-primary {
   margin-right: auto;
+}
+
+.hamburger-button {
+  background-color: transparent;
+  padding: 5px;
+}
+
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 73px;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-nav li {
+  margin: 15px 0;
+}
+
+@media only screen and (max-width: 1110px) {
+  .header-container .desktop {
+    display: none;
+  }
+  .header-container .mobile {
+    display: inline-block;
+  }
+  .content-container.header-container {
+    max-width: 540px;
+  }
+}
+
+@media only screen and (max-width: 565px) {
+  .content-container.header-container {
+    max-width: 327px;
+  }
 }

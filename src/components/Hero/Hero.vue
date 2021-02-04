@@ -11,9 +11,25 @@
       </div>
       <div class="hero-image">
         <img
+          class="desktop"
           src="../../assets/hero-bg-image.svg"
           alt="Background image of person sitting at desk"
         />
+        <img
+          class="mobile-image"
+          src="../../assets/hero-bg-mobile-image.svg"
+          alt="Background image of person sitting at desk"
+        />
+        <img
+          class="hero-bg-path"
+          src="../../assets/hero-bg-mobile-path-image.svg"
+          alt="Background image of person sitting at desk"
+        />
+        <!-- <img
+          class="mobile"
+          src="../../assets/hero-bg-mobile-bg-image.svg"
+          alt="Background image of person sitting at desk"
+        /> -->
       </div>
     </div>
   </section>

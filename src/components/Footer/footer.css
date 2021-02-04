@@ -38,3 +38,18 @@ footer ul.footer-logo-list {
   flex-direction: row;
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 1110px) {
+  .footer-list {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-logo {
+    margin-right: 0;
+    margin-bottom: 47px;
+  }
+  footer ul {
+    margin-bottom: 30px;
+  }
+}

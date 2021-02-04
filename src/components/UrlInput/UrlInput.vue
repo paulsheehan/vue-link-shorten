@@ -4,14 +4,14 @@
     :class="'results-' + results.length"
   >
     <div class="url-input-container">
-      <div class="url-input">
+      <div class="url-input" :class="showDisplayMessage ? 'invalid' : null">
         <input
           v-model="inputValue"
           type="text"
           placeholder="Shorten a link here..."
           v-on:keyup="onKeyup"
           v-on:focus="showDisplayMessage ? toggleDisplayMessage() : null"
-          :class="showDisplayMessage ? 'invalid' : 'null'"
+          :class="showDisplayMessage ? 'invalid' : null"
         />
         <button @click="handleInputSend" class="btn-link">Shorten It!</button>
         <span
