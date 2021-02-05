@@ -21,7 +21,7 @@ import UrlInput from "./components/UrlInput/UrlInput.vue";
 import Info from "./components/Info/Info.vue";
 import CtaSecondaryBanner from "./components/CtaSecondaryBanner/CtaSecondaryBanner.vue";
 import Footer from "./components/Footer/Footer.vue";
-import { postApiLink } from "./services/rebrandly-service";
+import { postApiLink } from "./services/firebase-service";
 export default {
   name: "App",
   components: {
@@ -56,6 +56,7 @@ export default {
         copied: false,
       };
 
+      console.log(shortenedUrl);
       this.isLoading = false;
       if (shortenedUrl.data) {
         if (this.results.length > 2) {
