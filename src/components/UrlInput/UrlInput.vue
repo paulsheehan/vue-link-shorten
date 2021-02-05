@@ -77,7 +77,6 @@ export default {
     },
     handleInputSend() {
       this.inputValue = this.inputValue.split(" ").join("");
-      console.log(this.inputValue);
       if (this.validateInput(this.inputValue)) {
         this.isValid = true;
         this.$emit("shorten-url", this.inputValue);

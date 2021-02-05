@@ -12,12 +12,22 @@
 }
 
 .info-cards-container {
+  position: relative;
   margin-top: 56px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-
+.info-bg-path {
+  position: absolute;
+  top: 195px;
+  display: block;
+}
+.info-bg-path-mobile {
+  position: absolute;
+  display: none;
+}
 .info-card {
   position: relative;
   display: flex;
@@ -29,6 +39,12 @@
   padding: 77px 32px 41px 32px;
   border-radius: 5px;
   background-color: var(--white);
+}
+.info-card-1 {
+  margin-bottom: 102px;
+}
+.info-card-3 {
+  margin-top: 144px;
 }
 
 .info-card img {
@@ -60,7 +76,21 @@
   .info-card {
     align-items: center;
     max-width: 327px;
-    margin-bottom: 48pxx;
+    margin-bottom: 48px;
+  }
+  .info-bg-path {
+    display: none;
+  }
+  .info-bg-path-mobile {
+    display: block;
+  }
+  .info-card-1 {
+    margin-top: 44px;
+    /* margin-bottom: 48px; */
+  }
+  .info-card-3 {
+    margin-top: 44px;
+    /* margin-bottom: 48px; */
   }
   .info-card p {
     text-align: center;

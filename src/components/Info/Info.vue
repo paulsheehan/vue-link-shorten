@@ -7,7 +7,17 @@
         statistics dashboard.
       </p>
       <div class="info-cards-container">
-        <div class="info-card">
+        <img
+          class="info-bg-path"
+          src="../../assets/info-bg-path.svg"
+          alt="Background pattern"
+        />
+        <img
+          class="info-bg-path-mobile"
+          src="../../assets/info-bg-path-mobile.svg"
+          alt="Background pattern"
+        />
+        <div class="info-card info-card-1">
           <img src="../../assets/graph-icon.svg" alt="Graph Icon" />
           <h3>Brand Recognition</h3>
           <p>
@@ -15,7 +25,7 @@
             mean a thing. Branded links help instil confidence in your content.
           </p>
         </div>
-        <div class="info-card">
+        <div class="info-card info-card-2">
           <img src="../../assets/spedometer-icon.svg" alt="Spedometer Icon" />
           <h3>Detailed Records</h3>
           <p>
@@ -23,7 +33,7 @@
             where people engage with your content helps inform better decisions.
           </p>
         </div>
-        <div class="info-card">
+        <div class="info-card info-card-3">
           <img
             src="../../assets/paintbrush-icon.svg"
             alt="Paintbrush Icon"
