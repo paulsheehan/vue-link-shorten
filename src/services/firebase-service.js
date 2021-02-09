@@ -1,7 +1,7 @@
 const baseUrl = "http://localhost:3000";
 
 export function postApiLink(destination) {
-  let url = baseUrl + "/links";
+  let url = baseUrl + "/test-links";
   let body = JSON.stringify({
     destination: destination,
   });

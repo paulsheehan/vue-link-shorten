@@ -22,6 +22,10 @@ import Info from "./components/Info/Info.vue";
 import CtaSecondaryBanner from "./components/CtaSecondaryBanner/CtaSecondaryBanner.vue";
 import Footer from "./components/Footer/Footer.vue";
 import { postApiLink } from "./services/firebase-service";
+import {
+  saveNewCachedResult,
+  getLatestCachedResults,
+} from "./services/localStorage-service";
 export default {
   name: "App",
   components: {
@@ -48,24 +52,37 @@ export default {
       ],
     };
   },
+  mounted: function() {
+    let cachedResults = getLatestCachedResults();
+    if (cachedResults) {
+      this.results = cachedResults;
+    }
+  },
   methods: {
     async shortenUrl(value) {
+      // Set loading animation
       this.isLoading = true;
+
+      // (await) Post value to API then save results
       let shortenedUrl = {
         data: await postApiLink(value),
         copied: false,
       };
 
-      console.log(shortenedUrl);
+      //End loading animation
       this.isLoading = false;
+
       if (shortenedUrl.data) {
+        // Store last 3 results on frontend
         if (this.results.length > 2) {
           this.results.pop();
           this.results.unshift(shortenedUrl);
         } else {
           this.results.unshift(shortenedUrl);
         }
+        saveNewCachedResult(shortenedUrl);
       } else {
+        // Error, NULL results returned
         console.log(
           "Something went wrong, and could not return a shortened link"
         );

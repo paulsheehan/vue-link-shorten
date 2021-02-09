@@ -69,6 +69,7 @@ app.listen(port);
 app.post("/links", (req, res) => {
   let destination = req.body.destination;
 
+  // NEED TO add 'https://' to links if non exsistant
   let body = {
     dynamicLinkInfo: {
       domainUriPrefix: "https://squis.co",
@@ -96,4 +97,26 @@ app.post("/links", (req, res) => {
       res.status(400).json({ error: "Something went wrong on the server" });
     }
   });
+});
+
+app.post("/test-links", (req, res) => {
+  let destination = req.body.destination;
+
+  let body = {
+    dynamicLinkInfo: {
+      domainUriPrefix: "https://squis.co/" + "xyz",
+      link: "https://" + destination,
+    },
+    suffix: {
+      option: "SHORT",
+    },
+  };
+
+  setTimeout(function() {
+    res.status(200).json({
+      createdAt: "2021-01-26T22:45:54.000Z",
+      shortUrl: body.dynamicLinkInfo.domainUriPrefix,
+      destination: destination,
+    });
+  }, 2000);
 });
