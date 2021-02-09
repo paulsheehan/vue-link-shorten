@@ -25,6 +25,7 @@ import { postApiLink } from "./services/firebase-service";
 import {
   saveNewCachedResult,
   getLatestCachedResults,
+  getSingleCachedResult,
 } from "./services/localStorage-service";
 export default {
   name: "App",
@@ -63,11 +64,15 @@ export default {
       // Set loading animation
       this.isLoading = true;
 
+      let shortenedUrl = getSingleCachedResult(value);
+
       // (await) Post value to API then save results
-      let shortenedUrl = {
-        data: await postApiLink(value),
-        copied: false,
-      };
+      if (!shortenedUrl) {
+        shortenedUrl = {
+          data: await postApiLink(value),
+          copied: false,
+        };
+      }
 
       //End loading animation
       this.isLoading = false;

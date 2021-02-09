@@ -1,10 +1,12 @@
 const baseUrl = "http://localhost:3000";
 
 export function postApiLink(destination) {
-  let url = baseUrl + "/test-links";
+  let url = baseUrl + "/links";
   let body = JSON.stringify({
     destination: destination,
   });
+
+  console.log("Making API call to ", baseUrl);
 
   return fetch(url, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
