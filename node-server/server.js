@@ -1,5 +1,7 @@
 const express = require("express");
 const axios = require("axios");
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 const bodyParser = require("body-parser");
 const helmet = require("helmet");
 const cors = require("cors");
@@ -66,14 +68,15 @@ let apiRequest = function(req, res, destination, httpmethod, body = null) {
 // listen on the port
 app.listen(port);
 
-app.post("/links", (req, res) => {
+app.post("/links", async (req, res) => {
   let destination = req.body.destination;
-
-  // NEED TO add 'https://' to links if non exsistant
+  let fullPath = addHttpProtocol(destination);
+  let previewMetadata = await getPreviewMetadata(fullPath);
   let body = {
     dynamicLinkInfo: {
       domainUriPrefix: "https://squis.co",
-      link: "https://" + destination,
+      link: fullPath,
+      ...previewMetadata,
     },
     suffix: {
       option: "SHORT",
@@ -89,9 +92,10 @@ app.post("/links", (req, res) => {
   ).then((data) => {
     if (data) {
       res.status(200).json({
-        createdAt: "2021-01-26T22:45:54.000Z",
+        createdAt: new Date().toISOString(),
         shortUrl: data.shortLink,
         destination: destination,
+        ...previewMetadata,
       });
     } else {
       res.status(400).json({ error: "Something went wrong on the server" });
@@ -99,24 +103,76 @@ app.post("/links", (req, res) => {
   });
 });
 
-app.post("/test-links", (req, res) => {
+app.post("/test-links", async (req, res) => {
   let destination = req.body.destination;
+  let fullPath = addHttpProtocol(destination);
 
   let body = {
     dynamicLinkInfo: {
       domainUriPrefix: "https://squis.co/" + "xyz",
-      link: "https://" + destination,
+      link: fullPath,
     },
     suffix: {
       option: "SHORT",
     },
   };
-
+  let previewMetadata = await getPreviewMetadata(fullPath);
   setTimeout(function() {
     res.status(200).json({
-      createdAt: "2021-01-26T22:45:54.000Z",
+      createdAt: new Date().toISOString(),
       shortUrl: body.dynamicLinkInfo.domainUriPrefix,
       destination: destination,
+      ...previewMetadata,
     });
   }, 2000);
 });
+
+let getPreviewMetadata = function(url) {
+  return axios
+    .get(url)
+    .then(
+      (response) => {
+        if (response.status === 200) {
+          return response.data;
+        }
+      },
+      (error) => console.log(error)
+    )
+    .then((rawhtml) => {
+      if (rawhtml) {
+        let dom = new JSDOM(rawhtml);
+        let title = dom.window.document.title;
+        let description = dom.window.document.querySelector(
+          'meta[name="description"]'
+        );
+        if (description) {
+          description = description.content;
+        }
+        let imgs = dom.window.document.getElementsByTagName("img");
+        let previewImageSrc = "";
+        if (imgs.length > 0) {
+          previewImageSrc = imgs[0].getAttribute("src");
+        } else {
+          console.log("Did not find an image on the site");
+        }
+        return {
+          socialMetaTagInfo: {
+            socialTitle: title,
+            socialDescription: description,
+            socialImageLink: previewImageSrc,
+          },
+        };
+      } else {
+        console.log("Did not get a 200 response");
+        return null;
+      }
+    });
+};
+
+let addHttpProtocol = function(value) {
+  if (!/^https?:\/\//i.test(value)) {
+    return "https://" + value;
+  } else {
+    return value;
+  }
+};

@@ -25,8 +25,8 @@
         <li v-if="isLoading" class="results-item loading"></li>
         <li
           class="results-item"
-          v-for="result in results"
-          :key="result.data.shortUrl"
+          v-for="(result, index) in results"
+          :key="index + result.data.shortUrl"
         >
           <span class="results-destination">{{ result.data.destination }}</span>
           <a

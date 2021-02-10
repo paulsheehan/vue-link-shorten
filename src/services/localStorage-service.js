@@ -11,7 +11,7 @@ export function getAllCachedResults() {
 export function getLatestCachedResults() {
   let cachedResults = JSON.parse(localStorage.getItem("cachedResults"));
   if (cachedResults) {
-    return cachedResults.slice(-3);
+    return cachedResults.slice(-3).reverse();
   } else {
     return null;
   }

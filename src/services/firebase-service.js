@@ -6,8 +6,6 @@ export function postApiLink(destination) {
     destination: destination,
   });
 
-  console.log("Making API call to ", baseUrl);
-
   return fetch(url, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
