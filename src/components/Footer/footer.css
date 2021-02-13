@@ -6,6 +6,15 @@ footer {
 .footer-logo {
   margin-right: 170px;
 }
+.footer-logo a {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  color: var(--white);
+}
+.footer-logo img {
+  margin-right: 15px;
+}
 
 .footer-list {
   display: flex;

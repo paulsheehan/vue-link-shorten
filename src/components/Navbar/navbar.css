@@ -29,6 +29,13 @@ header {
 .nav-list .nav-home a {
   padding: 0;
   margin-right: 37px;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  color: var(--primary-text-color);
+}
+.nav-list .nav-home img {
+  margin-right: 15px;
 }
 
 .nav-list a {

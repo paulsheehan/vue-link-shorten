@@ -3,7 +3,8 @@
     <div class="content-container">
       <div class="footer-list">
         <div class="footer-logo">
-          <img src="../../assets/logo-white.svg" alt="Shortly Logo" />
+          <!-- <img src="../../assets/logo-white.svg" alt="Shortly Logo" /> -->
+          <a href="#">Squisheo</a>
         </div>
         <ul>
           <li class="footer-list-title">Features</li>

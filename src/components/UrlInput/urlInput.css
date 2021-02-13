@@ -123,6 +123,7 @@
   display: inline-block;
   margin-right: auto;
   padding-right: 10px;
+  max-width: 650px;
 }
 
 /* Mobile styles */

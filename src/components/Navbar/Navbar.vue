@@ -4,7 +4,8 @@
     <div class="content-container header-container">
       <ul class="nav-list nav-list-primary">
         <li class="nav-home">
-          <a href="#"><img src="../../assets/logo.svg"/></a>
+          <!-- <a href="#"><img src="../../assets/logo.svg"/></a> -->
+          <a href="#">Squisheo</a>
         </li>
         <li class="desktop"><a href="#">Features</a></li>
         <li class="desktop"><a href="#">Pricing</a></li>
