@@ -94,7 +94,7 @@ app.post("/links", async (req, res) => {
     if (data) {
       res.status(200).json({
         createdAt: new Date().toISOString(),
-        shortUrl: data.shortLink.replace(/(^\w+:|^)\/\//, ""),
+        shortUrl: data.shortLink.replace("https://", ""),
         destination: destination,
         ...previewMetadata,
       });

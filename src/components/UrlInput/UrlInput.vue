@@ -33,8 +33,8 @@
           <a
             class="results-shortened-url"
             target="_blank"
-            :href="result.data.shortUrl"
-            >{{ "https://"+result.data.shortUrl }}</a
+            :href="'https://'+result.data.shortUrl"
+            >{{ result.data.shortUrl }}</a
           >
           <button
             @click="handleLinkCopied(result)"
