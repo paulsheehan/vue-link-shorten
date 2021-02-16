@@ -13,7 +13,7 @@ require("dotenv").config();
 app.use(helmet());
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:8080");
+  res.header("Access-Control-Allow-Origin", "https://squisheo.com");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
@@ -69,6 +69,7 @@ let apiRequest = function(req, res, destination, httpmethod, body = null) {
 app.listen(port);
 
 app.post("/links", async (req, res) => {
+	console.log("Reached");
   let destination = req.body.destination;
   let fullPath = addHttpProtocol(destination);
   let previewMetadata = await getPreviewMetadata(fullPath);
