@@ -1,5 +1,4 @@
-const baseUrl = "http://localhost:3000";
-
+const baseUrl = "https://squisheo.com";
 export function postApiLink(destination) {
   let url = baseUrl + "/links";
   let body = JSON.stringify({
