@@ -2,12 +2,11 @@
   <section class="hero-container">
     <div class="content-container hero-row">
       <div class="hero-info">
-        <h1>More than just shorter links</h1>
+        <h1>Short Urls that stand out</h1>
         <p>
-          Build your brand’s recognition and get detailed insights on how your
-          links are performing.
+          Promote your brands content by creating trendy shortened links.
         </p>
-        <a class="btn-link">Get Started</a>
+        <button class="btn-link" @click="onCtaClick">Try It Out</button>
       </div>
       <div class="hero-image">
         <img
@@ -36,7 +35,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    onCtaClick() {
+      this.$emit("on-cta-click");
+    },
+  },
+  emits: ["on-cta-click"],
+};
 </script>
 
 <style scoped>

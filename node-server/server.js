@@ -69,7 +69,7 @@ let apiRequest = function(req, res, destination, httpmethod, body = null) {
 app.listen(port);
 
 app.post("/links", async (req, res) => {
-	console.log("Reached");
+  console.log("Reached");
   let destination = req.body.destination;
   let fullPath = addHttpProtocol(destination);
   let previewMetadata = await getPreviewMetadata(fullPath);
@@ -94,7 +94,7 @@ app.post("/links", async (req, res) => {
     if (data) {
       res.status(200).json({
         createdAt: new Date().toISOString(),
-        shortUrl: data.shortLink,
+        shortUrl: data.shortLink.replace(/(^\w+:|^)\/\//, ""),
         destination: destination,
         ...previewMetadata,
       });

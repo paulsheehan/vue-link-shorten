@@ -6,9 +6,10 @@
     <div class="url-input-container">
       <div class="url-input" :class="showDisplayMessage ? 'invalid' : null">
         <input
+          ref="input"
           v-model="inputValue"
           type="text"
-          placeholder="Shorten a link here..."
+          placeholder="Enter your url here"
           v-on:keyup="onKeyup"
           v-on:focus="showDisplayMessage ? toggleDisplayMessage() : null"
           :class="showDisplayMessage ? 'invalid' : null"
@@ -74,6 +75,10 @@ export default {
       } else {
         setTimeout(() => (this.showDisplayMessage = false), 100);
       }
+    },
+    focusInput() {
+      window.scrollTo(0, this.$refs.input.offsetTop);
+      this.$refs.input.focus();
     },
     handleInputSend() {
       this.inputValue = this.inputValue.split(" ").join("");

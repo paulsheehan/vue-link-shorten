@@ -1,15 +1,16 @@
 <template>
   <div id="app">
     <Navbar />
-    <Hero />
+    <Hero @on-cta-click="focusUrlInput" />
     <UrlInput
+      ref="urlInput"
       @shorten-url="shortenUrl"
       :is-loading="isLoading"
       :shortened-url="shortenedUrl"
       :results="results"
     />
     <Info />
-    <CtaSecondaryBanner />
+    <CtaSecondaryBanner @on-cta-click="focusUrlInput" />
     <Footer />
   </div>
 </template>
@@ -60,6 +61,9 @@ export default {
     }
   },
   methods: {
+    focusUrlInput() {
+      this.$refs.urlInput.focusInput();
+    },
     async shortenUrl(value) {
       // Set loading animation
       this.isLoading = true;

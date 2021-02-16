@@ -87,7 +87,7 @@ a:hover {
   border-radius: 28px;
   padding: 13px 40px;
   color: var(--white);
-  transition: background-color 0s;
+  transition: none;
 }
 
 .btn-link:hover {
@@ -113,6 +113,10 @@ a:hover {
     align-items: center;
     text-align: center;
     max-width: initial;
+  }
+  .btn-link:hover {
+    background-color: var(--cta-primary);
+    transition: none;
   }
 }
 
