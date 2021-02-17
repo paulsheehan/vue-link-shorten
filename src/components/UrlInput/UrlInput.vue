@@ -33,7 +33,7 @@
           <a
             class="results-shortened-url"
             target="_blank"
-            :href="result.data.shortUrl"
+            :href="'https://'+result.data.shortUrl"
             >{{ result.data.shortUrl }}</a
           >
           <button
