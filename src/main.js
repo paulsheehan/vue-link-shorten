@@ -5,9 +5,14 @@ import VueAnalytics from "vue-ua";
 
 Vue.config.productionTip = false;
 Vue.use(Clipboard, VueAnalytics, {
-  appName: "link-shortener-c40d2",
+  appName: "Squisheo",
   appVersion: "1",
   trackingId: process.env.API_KEY,
+  debug: {
+    enabled: true, // default value
+    trace: true, // default value
+    sendHitTask: true, // default value
+  },
 });
 new Vue({
   render: (h) => h(App),
