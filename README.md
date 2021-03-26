@@ -1,6 +1,9 @@
 # vue-link-shorten
 Squisheo is a simple url shortener, so it accepts a valid url through an input form and returns a shortened link to that url. 
 
+# Live Site
+The live site can be found at https://www.squisheo.com
+
 I setup a http endpoint in Express that uses Firebase Dynamic Links to create the shortened link. The Express API also uses a library called JSDom to scrape metadata so that preview image, title, and description appear when sharing the shortened link on social media.
 
 The urls are branded with my own domain name called squis.co, which is handled on my Firebase account.
